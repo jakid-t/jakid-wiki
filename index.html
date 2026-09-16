@@ -8,10 +8,9 @@
 </head>
 <body>
 
-<!-- Шапка -->
 <header id="wiki-header">
     <div class="header-inner">
-        <a href="#/" class="logo" onclick="navigateHome()">
+        <a href="index.html" class="logo">
             <span class="logo-globe">🌐</span>
             <span class="logo-text">Википедия<br><small>Микронации</small></span>
         </a>
@@ -20,25 +19,40 @@
             <div id="searchResults" class="search-results"></div>
         </div>
         <div class="header-links">
-            <a href="#/">Главная</a>
-            <a href="#/all">Все статьи</a>
+            <a href="index.html">Главная</a>
+            <a href="all.html">Все статьи</a>
         </div>
     </div>
 </header>
 
-<!-- Основной контент -->
 <main id="content">
-    <!-- Сюда рендерится статья или главная -->
+    <div class="main-page">
+        <h1 class="firstHeading">Добро пожаловать в Википедию о микронациях</h1>
+        <p>Здесь собраны статьи о самых известных <b>микронациях</b> мира.</p>
+        <h2>Все статьи</h2>
+        <div class="article-grid" id="homeGrid"></div>
+    </div>
 </main>
 
-<!-- Футер -->
 <footer id="wiki-footer">
     <p>Материал из «Википедии о микронациях» — свободной энциклопедии.</p>
-    <p><small>Это демонстрационный проект. Все данные приведены в образовательных целях.</small></p>
 </footer>
 
-<!-- Скрипты -->
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script>
+    // Рендер карточек на главной
+    document.getElementById("homeGrid").innerHTML = MICRONATIONS.map(mn => `
+        <a class="article-card" href="${mn.id}.html">
+            <div class="card-flag">
+                ${mn.flag
+                    ? `<img src="${mn.flag}" alt="" onerror="this.outerHTML='<span style=\\'font-size:2.5em;\\'>${mn.flagEmoji || "🏴"}</span>'">`
+                    : `<span style="font-size:2.5em;">${mn.flagEmoji || "🏴"}</span>`}
+            </div>
+            <div class="card-title">${mn.title}</div>
+            <div class="card-desc">${mn.shortDesc}</div>
+        </a>
+    `).join("");
+</script>
 </body>
 </html>
