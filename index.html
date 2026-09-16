@@ -3,377 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Микронация — Википедия</title>
-    <style>
-        /* Основные стили, имитирующие вектор скина Википедии */
-        body {
-            font-family: sans-serif;
-            font-size: 0.875em;
-            line-height: 1.6;
-            color: #202122;
-            background-color: #f6f6f6;
-            margin: 0;
-            padding: 0;
-        }
-
-        #content {
-            background-color: #fff;
-            border: 1px solid #a7d7f9;
-            border-right: none;
-            padding: 1.25em 1.5em 1.5em 1.5em;
-            margin-left: 10em;
-            margin-top: 0;
-            max-width: 1000px;
-            position: relative;
-        }
-
-        /* Заголовки */
-        h1.firstHeading {
-            font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-            font-size: 1.8em;
-            border-bottom: 1px solid #a2a9b1;
-            margin-bottom: 0.25em;
-            padding-bottom: 0.2em;
-            font-weight: normal;
-        }
-
-        h2 {
-            font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
-            font-size: 1.5em;
-            border-bottom: 1px solid #a2a9b1;
-            margin-top: 1.3em;
-            margin-bottom: 0.5em;
-            font-weight: normal;
-            padding-bottom: 0.2em;
-        }
-
-        h3 {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-        }
-
-        /* Ссылки */
-        a {
-            color: #0645ad;
-            text-decoration: none;
-            background: none;
-        }
-        a:hover { text-decoration: underline; }
-        a.new { color: #ba0000; }
-
-        /* Инфобокс */
-        .infobox {
-            float: right;
-            clear: right;
-            width: 22em;
-            margin: 0.5em 0 1em 1em;
-            background-color: #f8f9fa;
-            border: 1px solid #a2a9b1;
-            font-size: 0.88em;
-            line-height: 1.4;
-            padding: 0.2em;
-        }
-        .infobox-title {
-            text-align: center;
-            font-size: 1.25em;
-            font-weight: bold;
-            padding: 0.2em;
-            background-color: #eaecf0;
-            margin-bottom: 0.2em;
-        }
-        .infobox img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-            padding: 0.5em 0;
-        }
-        .infobox table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .infobox th, .infobox td {
-            padding: 0.3em 0.5em;
-            vertical-align: top;
-            text-align: left;
-        }
-        .infobox th {
-            width: 40%;
-            font-weight: bold;
-        }
-        .infobox caption {
-            font-size: 0.9em;
-            color: #54595d;
-            padding-bottom: 0.5em;
-        }
-
-        /* Оглавление */
-        #toc {
-            display: table;
-            background-color: #f8f9fa;
-            border: 1px solid #a2a9b1;
-            padding: 0.5em 1em;
-            font-size: 0.95em;
-            margin: 1em 0;
-        }
-        #toc h2 {
-            font-size: 1em;
-            font-weight: bold;
-            border-bottom: none;
-            margin: 0;
-            padding: 0;
-            display: inline-block;
-            font-family: sans-serif;
-        }
-        .toctitle {
-            text-align: center;
-            margin-bottom: 0.5em;
-        }
-        #toc ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        #toc ul ul {
-            margin-left: 1.5em;
-        }
-        #toc li {
-            margin-bottom: 0.1em;
-        }
-        .tocnumber {
-            color: #202122;
-            padding-right: 0.5em;
-        }
-
-        p {
-            margin: 0.5em 0 1em 0;
-        }
-
-        /* Сноски */
-        .reference {
-            font-size: 0.8em;
-            vertical-align: super;
-            line-height: 1;
-        }
-        .references {
-            font-size: 0.9em;
-            column-count: 2;
-            margin-top: 2em;
-            border-top: 1px solid #a2a9b1;
-            padding-top: 1em;
-        }
-        .references ol {
-            margin: 0;
-            padding-left: 1.5em;
-        }
-
-        /* Категории */
-        .catlinks {
-            border: 1px solid #a2a9b1;
-            background-color: #f8f9fa;
-            padding: 0.5em;
-            margin-top: 2em;
-            font-size: 0.9em;
-        }
-
-        /* Список флагов-примеров */
-        .micronation-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
-            margin: 1em 0;
-        }
-        .micronation-card {
-            border: 1px solid #a2a9b1;
-            background: #f8f9fa;
-            padding: 0.75em;
-            width: 200px;
-            font-size: 0.9em;
-        }
-        .micronation-card .flag {
-            width: 100%;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-            border: 1px solid #ccc;
-        }
-
-        @media (max-width: 720px) {
-            .infobox {
-                float: none;
-                width: 100%;
-                margin: 1em 0;
-            }
-            #content {
-                margin-left: 0;
-                padding: 1em;
-            }
-        }
-    </style>
+    <title>Википедия — Микронации</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="content">
-
-    <h1 class="firstHeading">Микронация</h1>
-
-    <!-- Инфобокс -->
-    <div class="infobox">
-        <div class="infobox-title">Микронация</div>
-        <div style="text-align: center; font-size: 3em; padding: 0.3em 0;">🏴</div>
-        <div style="text-align: center; font-size: 0.85em; color: #54595d; padding: 0 0.5em 0.5em;">
-            Символическое изображение флага микронации
+<!-- Шапка -->
+<header id="wiki-header">
+    <div class="header-inner">
+        <a href="#/" class="logo" onclick="navigateHome()">
+            <span class="logo-globe">🌐</span>
+            <span class="logo-text">Википедия<br><small>Микронации</small></span>
+        </a>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Поиск микронации..." autocomplete="off">
+            <div id="searchResults" class="search-results"></div>
         </div>
-        <table>
-            <tr>
-                <th>Понятие:</th>
-                <td>Самопровозглашённое государство</td>
-            </tr>
-            <tr>
-                <th>Признание:</th>
-                <td>Как правило, отсутствует</td>
-            </tr>
-            <tr>
-                <th>Число в мире:</th>
-                <td>Более 400 (оценка)</td>
-            </tr>
-            <tr>
-                <th>Крупнейшие:</th>
-                <td>
-                    <a href="#">Силенд</a><br>
-                    <a href="#">Молоссия</a><br>
-                    <a href="#">Либерленд</a><br>
-                    <a href="#">Христиания</a>
-                </td>
-            </tr>
-            <tr>
-                <th>Связанные понятия:</th>
-                <td>
-                    <a href="#">Виртуальное государство</a><br>
-                    <a href="#">Сепаратизм</a>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- Преамбула -->
-    <p><b>Микронация</b> (также <b>микрогосударство</b>, <b>виртуальное государство</b>) — небольшое самопровозглашённое образование, которое имитирует государство, но не обладает международным признанием и, как правило, не имеет реального суверенитета над заявленной территорией.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup></p>
-
-    <p>Микронации отличаются от <a href="#">непризнанных государств</a> тем, что обычно не стремятся к полноценной независимости или вооружённой борьбе. Чаще всего они существуют как хобби, художественный проект, политический эксперимент или туристическая достопримечательность.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup></p>
-
-    <!-- Оглавление -->
-    <div id="toc">
-        <div class="toctitle">
-            <h2>Содержание</h2>
-        </div>
-        <ul>
-            <li><span class="tocnumber">1</span> <a href="#Определение">Определение</a></li>
-            <li><span class="tocnumber">2</span> <a href="#История">История</a></li>
-            <li><span class="tocnumber">3</span> <a href="#Классификация">Классификация</a>
-                <ul>
-                    <li><span class="tocnumber">3.1</span> <a href="#Территориальные">Территориальные</a></li>
-                    <li><span class="tocnumber">3.2</span> <a href="#Виртуальные">Виртуальные</a></li>
-                    <li><span class="tocnumber">3.3</span> <a href="#Новеллические">Новеллические</a></li>
-                </ul>
-            </li>
-            <li><span class="tocnumber">4</span> <a href="#Известные_примеры">Известные примеры</a></li>
-            <li><span class="tocnumber">5</span> <a href="#Правовой_статус">Правовой статус</a></li>
-            <li><span class="tocnumber">6</span> <a href="#Критика">Критика</a></li>
-            <li><span class="tocnumber">7</span> <a href="#См._также">См. также</a></li>
-            <li><span class="tocnumber">8</span> <a href="#Примечания">Примечания</a></li>
-        </ul>
-    </div>
-
-    <!-- Разделы -->
-    <h2>Определение</h2>
-    <p>Единого академического определения микронации не существует. Исследователи обычно относят к ним образования, которые:<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup></p>
-    <ul>
-        <li>провозглашают себя независимым государством;</li>
-        <li>не признаются другими государствами и международными организациями;</li>
-        <li>имеют ограниченные размеры (от комнаты до небольшого острова);</li>
-        <li>существуют преимущественно в символической или игровой форме.</li>
-    </ul>
-
-    <h2>История</h2>
-    <p>Первые микронации появились ещё в XIX веке. Одной из старейших считается <a href="#">Республика Минерва</a>, основанная в 1970-х годах на коралловом рифе в Тихом океане. Массовый характер движение приобрело с развитием интернета в 1990–2000-х годах, когда появились сотни «виртуальных государств».<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup></p>
-
-    <h2>Классификация</h2>
-
-    <h3>Территориальные</h3>
-    <p>Такие микронации претендуют на конкретный участок земли: остров, заброшенную платформу, анклав. Пример — <a href="#">Силенд</a>, расположенный на морской платформе у берегов Великобритании.</p>
-
-    <h3>Виртуальные</h3>
-    <p>Существуют только в интернете или в воображении создателей. Они могут иметь «граждан», «правительство», «валюту» и «конституцию», но не контролируют никакой территории. Пример — <a href="#">Ладония</a>.</p>
-
-    <h3>Новеллические</h3>
-    <p>Создаются как художественный или литературный проект. Яркий пример — <a href="#">Молоссия</a>, основанная писателем Кевином Боу в Неваде.</p>
-
-    <!-- Карточки примеров -->
-    <h2>Известные примеры</h2>
-    <div class="micronation-list">
-        <div class="micronation-card">
-            <div class="flag">🏝️</div>
-            <b>Силенд</b><br>
-            Морская платформа, 1967 г.
-        </div>
-        <div class="micronation-card">
-            <div class="flag">🏜️</div>
-            <b>Молоссия</b><br>
-            Невада, США, 1977 г.
-        </div>
-        <div class="micronation-card">
-            <div class="flag">🌲</div>
-            <b>Христиания</b><br>
-            Копенгаген, Дания, 1971 г.
-        </div>
-        <div class="micronation-card">
-            <div class="flag">💻</div>
-            <b>Ладония</b><br>
-            Виртуальная, 2014 г.
+        <div class="header-links">
+            <a href="#/">Главная</a>
+            <a href="#/all">Все статьи</a>
         </div>
     </div>
+</header>
 
-    <h2>Правовой статус</h2>
-    <p>С точки зрения международного права микронации не являются субъектами международных отношений. Однако некоторые из них добились фактического самоуправления на локальном уровне — например, <a href="#">Христиания</a> в Копенгагене имеет особый статус по соглашению с датскими властями.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup></p>
+<!-- Основной контент -->
+<main id="content">
+    <!-- Сюда рендерится статья или главная -->
+</main>
 
-    <h2>Критика</h2>
-    <p>Критики указывают, что большинство микронаций — это либо туристические аттракционы, либо способ самовыражения отдельных людей. Некоторые исследователи считают термин «микронация» размытым и предлагают различать «микронации» и «виртуальные государства».</p>
+<!-- Футер -->
+<footer id="wiki-footer">
+    <p>Материал из «Википедии о микронациях» — свободной энциклопедии.</p>
+    <p><small>Это демонстрационный проект. Все данные приведены в образовательных целях.</small></p>
+</footer>
 
-    <h2>См. также</h2>
-    <ul>
-        <li><a href="#">Виртуальное государство</a></li>
-        <li><a href="#">Непризнанные государства</a></li>
-        <li><a href="#">Сепаратизм</a></li>
-        <li><a href="#">Список микронаций</a></li>
-    </ul>
-
-    <!-- Примечания -->
-    <div class="references">
-        <h2 id="Примечания" style="font-size: 1.2em; border: none;">Примечания</h2>
-        <ol>
-            <li id="cite_note-1"><a href="#cite_ref-1">↑</a> Ryan J., Dunford G., Sellars S. Micronations: The Lonely Planet Guide to Home-Made Nations. — Lonely Planet, 2006.</li>
-            <li id="cite_note-2"><a href="#cite_ref-2">↑</a> Hobbs H., Williams B. Micronations. — Chelsea House, 2009.</li>
-            <li id="cite_note-3"><a href="#cite_ref-3">↑</a> Определение по материалам академических публикаций о самопровозглашённых государствах.</li>
-            <li id="cite_note-4"><a href="#cite_ref-4">↑</a> История микронаций на примере Силенда и Молоссии.</li>
-            <li id="cite_note-5"><a href="#cite_ref-5">↑</a> Данные о статусе Христиании по соглашению с властями Дании.</li>
-        </ol>
-    </div>
-
-    <!-- Категории -->
-    <div class="catlinks">
-        <b>Категории:</b>
-        <a href="#">Микронации</a> |
-        <a href="#">Виртуальные государства</a> |
-        <a href="#">Политические субкультуры</a> |
-        <a href="#">Самопровозглашённые государства</a>
-    </div>
-
-</div>
-
+<!-- Скрипты -->
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
