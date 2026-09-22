@@ -294,3 +294,120 @@ p { margin: 0.5em 0 1em 0; }
     .header-links { margin-left: auto; }
     #content { margin: 0.5em; padding: 1em; }
 }
+
+/* ===== Навигация по разделам ===== */
+.section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 0.4em 0.6em;
+    margin: 0 0 1em 0;
+    font-size: 0.9em;
+}
+.section-nav a {
+    padding: 0.3em 0.7em;
+    border-radius: 2px;
+}
+.section-nav a:hover { background: #eaf3ff; text-decoration: none; }
+.section-nav a.active {
+    background: #3366cc;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ===== Флаг Жакида (CSS-триколор) ===== */
+.zhakid-flag {
+    display: inline-block;
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 3 / 2;
+    border: 1px solid #a2a9b1;
+    background: linear-gradient(
+        to bottom,
+        #0a2a66 0%, #0a2a66 33.33%,
+        #ffffff 33.33%, #ffffff 66.66%,
+        #000000 66.66%, #000000 100%
+    );
+}
+.zhakid-flag.small {
+    width: 40px;
+    height: 26px;
+    max-width: none;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+/* ===== Аллея славы ===== */
+.heroes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1em;
+    margin: 1.5em 0;
+}
+.hero-card {
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    padding: 0.9em;
+    text-align: center;
+}
+.hero-card .hero-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0a2a66;
+    background: #fff;
+    margin: 0 auto 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+}
+.hero-card .hero-name {
+    font-weight: bold;
+    font-size: 1.05em;
+    color: #0645ad;
+    margin-bottom: 0.2em;
+}
+.hero-card .hero-role {
+    font-size: 0.85em;
+    color: #54595d;
+    margin-bottom: 0.5em;
+}
+.hero-card .hero-desc {
+    font-size: 0.88em;
+    text-align: left;
+}
+
+/* ===== Законы ===== */
+.law-item {
+    border-left: 3px solid #0a2a66;
+    background: #f8f9fa;
+    padding: 0.7em 1em;
+    margin: 0.8em 0;
+}
+.law-item .law-num {
+    font-weight: bold;
+    color: #0a2a66;
+    margin-right: 0.4em;
+}
+.law-item .law-title {
+    font-weight: bold;
+}
+.law-item .law-text {
+    font-size: 0.92em;
+    margin-top: 0.3em;
+    color: #202122;
+}
+
+/* ===== Подвал ===== */
+#wiki-footer {
+    text-align: center;
+    font-size: 0.85em;
+    color: #54595d;
+    padding: 1em;
+    margin-top: 1em;
+    border-top: 1px solid #a2a9b1;
+}
