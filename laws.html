@@ -1,31 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Законы — Википедия Республики Жакид</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="wiki-header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <span class="logo-globe">🌐</span>
+            <span class="logo-text">Википедия<br><small>Республики Жакид</small></span>
+        </a>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Поиск по разделам..." autocomplete="off">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+        <div class="header-links">
+            <a href="index.html">Главная</a>
+            <a href="history.html">История</a>
+            <a href="heroes.html">Аллея славы</a>
+            <a href="laws.html">Законы</a>
+            <a href="symbols.html">Символика</a>
+        </div>
+    </div>
+</header>
+
 <main id="content">
     <h1 class="firstHeading">Законы Республики Жакид</h1>
 
-    <div class="section-nav">
-        <a href="index.html">Главная</a>
-        <a href="history.html">История</a>
-        <a href="heroes.html">Аллея славы</a>
-        <a href="laws.html" class="active">Законы</a>
-        <a href="symbols.html">Символика</a>
+    <table class="infobox">
+        <tr><th colspan="2" class="infobox-title">Правовая система</th></tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding:0.5em;">
+                <span style="font-size:3em;">⚖️</span>
+                <div class="img-caption">Эмблема правосудия</div>
+            </td>
+        </tr>
+        <tr><th>Основной закон</th><td>Конституция Жакида</td></tr>
+        <tr><th>Принята</th><td>—</td></tr>
+        <tr><th>Отрасли права</th><td>—</td></tr>
+    </table>
+
+    <p>Правовая система Республики Жакид основана на Конституции и кодексах.</p>
+
+    <div id="toc">
+        <div class="toctitle"><h2>Содержание</h2></div>
+        <ul>
+            <li><span class="tocnumber">1</span><a href="#constitution">Конституция</a></li>
+            <li><span class="tocnumber">2</span><a href="#codes">Кодексы</a></li>
+            <li><span class="tocnumber">3</span><a href="#rights">Права граждан</a></li>
+        </ul>
     </div>
 
-    <h2>Конституция</h2>
+    <h2 id="constitution">Конституция</h2>
+
     <div class="law-item">
         <span class="law-num">Ст. 1.</span>
         <span class="law-title">Основной закон</span>
-        <div class="law-text">Текст статьи...</div>
+        <div class="law-text">Республика Жакид есть ... (текст статьи).</div>
     </div>
 
     <div class="law-item">
         <span class="law-num">Ст. 2.</span>
-        <span class="law-title">Права граждан</span>
-        <div class="law-text">Текст статьи...</div>
+        <span class="law-title">Суверенитет</span>
+        <div class="law-text">Текст статьи.</div>
     </div>
 
-    <h2>Кодексы</h2>
+    <h2 id="codes">Кодексы</h2>
     <div class="law-item">
         <span class="law-num">§ 1.</span>
-        <span class="law-title">Название</span>
-        <div class="law-text">Текст...</div>
+        <span class="law-title">Гражданский кодекс</span>
+        <div class="law-text">Текст.</div>
+    </div>
+
+    <h2 id="rights">Права граждан</h2>
+    <div class="law-item">
+        <span class="law-num">Ст. 10.</span>
+        <span class="law-title">Свобода слова</span>
+        <div class="law-text">Текст.</div>
     </div>
 </main>
+
+<footer id="wiki-footer">
+    <p>Материал из «Википедии Республики Жакид».</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
