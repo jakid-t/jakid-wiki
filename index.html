@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Википедия — Микронации</title>
+    <title>Республика Жакид — Википедия</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,47 +12,89 @@
     <div class="header-inner">
         <a href="index.html" class="logo">
             <span class="logo-globe">🌐</span>
-            <span class="logo-text">Википедия<br><small>Микронации</small></span>
+            <span class="logo-text">Википедия<br><small>Республики Жакид</small></span>
         </a>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Поиск микронации..." autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Поиск по разделам..." autocomplete="off">
             <div id="searchResults" class="search-results"></div>
         </div>
         <div class="header-links">
             <a href="index.html">Главная</a>
-            <a href="all.html">Все статьи</a>
+            <a href="history.html">История</a>
+            <a href="heroes.html">Аллея славы</a>
+            <a href="laws.html">Законы</a>
+            <a href="symbols.html">Символика</a>
         </div>
     </div>
 </header>
 
 <main id="content">
-    <div class="main-page">
-        <h1 class="firstHeading">Добро пожаловать в Википедию о микронациях</h1>
-        <p>Здесь собраны статьи о самых известных <b>микронациях</b> мира.</p>
-        <h2>Все статьи</h2>
-        <div class="article-grid" id="homeGrid"></div>
+    <h1 class="firstHeading">Республика Жакид</h1>
+
+    <table class="infobox">
+        <tr><th colspan="2" class="infobox-title">Республика Жакид</th></tr>
+        <tr>
+            <td colspan="2" style="text-align:center; padding: 0.5em;">
+                <div class="zhakid-flag"></div>
+                <div class="img-caption">Флаг Республики Жакид<br>(сине-бело-чёрный триколор)</div>
+            </td>
+        </tr>
+        <tr><th>Основана</th><td>—</td></tr>
+        <tr><th>Столица</th><td>—</td></tr>
+        <tr><th>Язык</th><td>Русский</td></tr>
+        <tr><th>Форма правления</th><td>Республика</td></tr>
+        <tr><th>Президент</th><td>—</td></tr>
+        <tr><th>Население</th><td>—</td></tr>
+        <tr><th>Валюта</th><td>—</td></tr>
+    </table>
+
+    <p><b>Республика Жакид</b> — микронация, ... (краткое вступление).</p>
+
+    <div id="toc">
+        <div class="toctitle"><h2>Содержание</h2></div>
+        <ul>
+            <li><span class="tocnumber">1</span><a href="history.html">История</a></li>
+            <li><span class="tocnumber">2</span><a href="symbols.html">Символика</a></li>
+            <li><span class="tocnumber">3</span><a href="laws.html">Законы</a></li>
+            <li><span class="tocnumber">4</span><a href="heroes.html">Аллея славы</a></li>
+        </ul>
+    </div>
+
+    <h2>Обзор</h2>
+    <p>Текст обзора...</p>
+
+    <h2>Разделы вики</h2>
+    <div class="article-grid">
+        <a class="article-card" href="history.html">
+            <div class="card-flag">📜</div>
+            <div class="card-title">История</div>
+            <div class="card-desc">Как возникла Республика Жакид</div>
+        </a>
+        <a class="article-card" href="symbols.html">
+            <div class="card-flag">
+                <div class="zhakid-flag" style="max-width:60px;"></div>
+            </div>
+            <div class="card-title">Символика</div>
+            <div class="card-desc">Флаг, герб, гимн</div>
+        </a>
+        <a class="article-card" href="laws.html">
+            <div class="card-flag">⚖️</div>
+            <div class="card-title">Законы</div>
+            <div class="card-desc">Конституция и кодексы</div>
+        </a>
+        <a class="article-card" href="heroes.html">
+            <div class="card-flag">🏅</div>
+            <div class="card-title">Аллея славы</div>
+            <div class="card-desc">Герои Республики Жакид</div>
+        </a>
     </div>
 </main>
 
 <footer id="wiki-footer">
-    <p>Материал из «Википедии о микронациях» — свободной энциклопедии.</p>
+    <p>Материал из «Википедии Республики Жакид».</p>
 </footer>
 
 <script src="data.js"></script>
 <script src="app.js"></script>
-<script>
-    // Рендер карточек на главной
-    document.getElementById("homeGrid").innerHTML = MICRONATIONS.map(mn => `
-        <a class="article-card" href="${mn.id}.html">
-            <div class="card-flag">
-                ${mn.flag
-                    ? `<img src="${mn.flag}" alt="" onerror="this.outerHTML='<span style=\\'font-size:2.5em;\\'>${mn.flagEmoji || "🏴"}</span>'">`
-                    : `<span style="font-size:2.5em;">${mn.flagEmoji || "🏴"}</span>`}
-            </div>
-            <div class="card-title">${mn.title}</div>
-            <div class="card-desc">${mn.shortDesc}</div>
-        </a>
-    `).join("");
-</script>
 </body>
 </html>
